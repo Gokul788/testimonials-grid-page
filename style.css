@@ -1,0 +1,201 @@
+/* Import fonts in Google Fonts */
+
+/*  Family: [Barlow Semi Condensed] */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Varaibles */ 
+
+:root {
+    --bg-primary: hsl(263, 55%, 52%); 
+    --bg-secondary: hsl(217, 19%, 35%); 
+    --bg-dark: hsl(219, 29%, 14%); 
+    --bg-light: hsl(0, 0%, 100%); 
+    --font-family:"Barlow Semi Condensed", serif;
+}
+
+/* General  Styles */ 
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family);
+    background-color: rgb(223, 222, 222);
+}
+
+
+.grid-container {
+    display: grid;
+    margin: 3rem 2rem;
+    grid-template-rows: minmax(200px, auto) minmax(100px, auto) minmax(100px, auto) minmax(150px, auto) minmax(200px, auto);
+    gap: 2rem;
+  }
+
+  .testimonial{
+    width: 330px;
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+  }
+
+  /* Testimonial 1 Stlyes */
+
+
+  .testimonial--primary{
+    background-color: var(--bg-primary);
+    background-image: url(./assets/images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-size: 120px;
+    background-position:   right 30px  top; 
+  }
+  
+
+  .testimonial__profile{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+  }
+
+  .testimonial__image{
+    width: 35px;
+    border: 1px solid white;
+    border-radius: 50%;
+  }
+
+ .testimonial__name{
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+ }
+
+ .testimonial__status{
+    color: rgba(255, 255, 255, 0.582);
+    font-weight: 300;
+    font-size: .8rem;
+ }
+
+ .testimonial__title{
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.911);
+    font-weight: 550;
+ }
+
+
+ .testimonial__details{
+    margin-top: 1rem;
+    color: rgba(255, 255, 255, 0.61);
+    font-size: .9rem;
+    line-height: 20px;
+ }
+
+ /* Testimonial 2  Styles */
+
+ .testimonial--secondary{
+    background-color: var(--bg-secondary);
+ }
+
+ /* Testimonial 3 Styles */
+
+ .testimonial--light{
+    background-color: var(--bg-light);
+    
+ }
+
+ .testimonial--light > h1{
+   color: var(--bg-secondary);
+ }
+
+ .testimonial--light > p{
+    color: var(--bg-secondary);
+ }
+
+ .testimonial__info-light > p {
+    color: var(--bg-secondary);
+ }
+ .testimonial__info-light > span{
+    color: var(--bg-secondary);
+ }
+
+ /* Testimonial 4 Styles */
+
+ .testimonial--dark{
+    background-color: var(--bg-dark);
+ }
+
+
+ /* Testimonial 5 Styles */
+
+ .testimonial--highlight{
+    background-color: var(--bg-light);
+    color: var(--bg-secondary);
+ }
+
+ .testimonial--highlight > p{
+    color: var(--bg-secondary);
+ }
+ .testimonial--highlight > h1{
+    color: var(--bg-secondary);
+ }
+
+ .testimonial__info-highlight > p {
+    color: var(--bg-secondary);
+    font-weight: 400;
+ }
+ .testimonial__info-highlight > span {
+    color: var(--bg-secondary);
+ }
+
+ /* Media Quary */ 
+
+ @media (min-width:768px) {
+
+    .grid-container {
+        min-width: 750px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+          'testimonial--primary testimonial--primary testimonial--secondary testimonial--highlight'
+          'testimonial--light testimonial--dark testimonial--dark testimonial--highlight';
+        gap: 1rem;
+      }
+      
+      .testimonial--primary {
+        width: 100%;
+        grid-area: testimonial--primary;
+        background-position: right 50px top ;
+        
+      }
+      
+      .testimonial--secondary {
+        grid-area: testimonial--secondary;
+        
+      }
+      
+      .testimonial--dark {
+        grid-area: testimonial--dark;
+        width: 100%;
+        
+      }
+      
+      .testimonial--highlight {
+        grid-area: testimonial--highlight;
+        width: 100%;
+      }
+      
+      .testimonial--light {
+        grid-area: testimonial--light;
+        width: 100%;
+        
+      }
+ }
