@@ -26,7 +26,6 @@
 
 body{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: var(--font-family);
@@ -38,7 +37,7 @@ body{
     display: grid;
     margin: 3rem 2rem;
     grid-template-rows: minmax(200px, auto) minmax(100px, auto) minmax(100px, auto) minmax(150px, auto) minmax(200px, auto);
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .testimonial{
@@ -159,8 +158,11 @@ body{
  /* Media Quary */ 
 
  @media (min-width:768px) {
-
+   .body{
+    height: 100vh;
+   }
     .grid-container {
+        margin: 5rem 3rem  5rem  3rem;
         min-width: 750px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -179,6 +181,7 @@ body{
       
       .testimonial--secondary {
         grid-area: testimonial--secondary;
+        width: 100%;
         
       }
       
